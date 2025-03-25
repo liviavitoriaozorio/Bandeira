@@ -39,37 +39,41 @@ main {
     display: flex;
     margin: 2.5rem;
     border-radius: 1rem;
-    flex-direction: column; 
+    flex-direction: column; /* https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg */
     background-color: #f9f5e7;
 }
 .menu {
-    display: flex;                   /* Usando Flexbox dentro do header */
-    justify-content: space-between;  /* Alinha logo, links e redes sociais */
-    align-items: center;             /* Alinha os itens verticalmente */
+    display: flex;                   
+    justify-content: space-between;  
+    align-items: center;            
     border-radius: 1rem;
     padding: 10px 20px;              
 }
 
 .menu .logo {
-    height: 40px;                    /* Ajuste a altura da imagem logo conforme necessário */
+    height: 40px;                    
 }
 
 .topicos ul {
-    display: flex;                   /* Organiza os itens da lista horizontalmente */
-    gap: 20px;                       /* Espaçamento entre os tópicos */
-    margin: 0;
+    position: relative;
+    display: flex;                   
+    gap: 20px;                       
+    margin-left: 100px;
     padding: 0;
     list-style: none;
 }
-
-.topicos li a {
-    color: white;                    /* Cor dos links */
-    text-decoration: none;
-    font-size: 16px;
+.topicos li img{
+    text-align: center;
+    width: 1rem;
 }
-
-.topicos li a:hover {
-    text-decoration: underline;      /* Adiciona sublinhado ao passar o mouse */
+.topicos li a {
+    line-height: 70px;
+    color: #342164;                   
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    padding: 1rem;
 }
 
 /* Redes sociais à direita */
