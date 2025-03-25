@@ -58,7 +58,7 @@ main {
     position: relative;
     display: flex;                   
     gap: 20px;                       
-    margin-left: 100px;
+    margin-left: 200px;
     padding: 0;
     list-style: none;
 }
@@ -75,12 +75,11 @@ main {
     font-weight: 600;
     padding: 1rem;
 }
-
-/* Redes sociais à direita */
 .redes-sociais img {
-    width: 30px;                     /* Ajuste o tamanho dos ícones das redes sociais */
-    margin-left: 10px;                /* Espaçamento entre os ícones */
+    width: 1.3rem;                     
+    margin: 15px 30px;                
 }
+
 
 /* Estilo da seção de conteúdo */
 .conteudo {
