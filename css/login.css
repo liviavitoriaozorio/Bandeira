@@ -34,14 +34,20 @@ ul {
 /* -- Fundo -- */ 
 
 
-/* -- main -- */ 
+/* -- Main -- */ 
 main {
     display: flex;
     margin: 2.5rem;
-    border-radius: 1rem;
+    border-radius: 1rem 1rem 0rem 0rem;
     flex-direction: column; /* https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg */
     background-color: #f9f5e7;
+    position: absolute;
+    width: 96%;;
+    height: 90.5%;
+    object-fit: cover;
 }
+
+/* -- Topnav -- */ 
 .menu {
     display: flex;                   
     justify-content: space-between;  
@@ -49,11 +55,9 @@ main {
     border-radius: 1rem;
     padding: 10px 20px;              
 }
-
 .menu .logo {
     height: 40px;                    
 }
-
 .topicos ul {
     position: relative;
     display: flex;                   
@@ -79,34 +83,83 @@ main {
     width: 1.3rem;                     
     margin: 15px 30px;                
 }
+/* -- Topnav -- */ 
 
 
-/* Estilo da seção de conteúdo */
+
+/* -- Conteudo -- */ 
 .conteudo {
-    margin-top: 20px;                 /* Espaçamento abaixo do header */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;                 
     padding: 20px;
 }
-
-/* Estilizando os campos de input e botões */
-.dados {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+#mapa{
+    margin-top: 4rem;
+    margin-left: 0px;
+    width: 65rem;
+    grid-column: 1/2;
 }
-
-.dados input {
-    padding: 10px;
-    font-size: 16px;
+.conteudo h1{
+    position: relative;
+    left: 25px;
+    top:90px;
+    margin-top: 4rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    color: #342164; 
 }
-
-.bnt {
-    padding: 10px 20px;
-    background-color: #555;
-    color: white;
+.dados{
+    position: relative;
+    top: -19rem;
+    grid-column: 2/2;           
+    border-radius: 1rem;
+    padding: 10px 20px; 
+}
+.user{
+    width: 4.5rem;
+    position: relative;
+    top: 15px
+}
+.dados input{
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    width: 30rem;
+    padding: 15px;
+    border-radius: 1rem;
+    background: #342164;
+    color:#f9f5e7;
     border: none;
-    cursor: pointer;
 }
+.bnt {
+    top: 100px;
+    position: absolute;
+    left: 500px;
+    grid-column: 2/2;
+    display: flex;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: #342164;
+    color: #f9f5e7;
+    font-family: "Open Sans", sans-serif;
+}
+.bnt img{
+    top:8px;
+    left: 2px;
+    position: relative;
+    height: 30px;
+    width: auto;
 
+}
+.bnt img{
+    height: 30px;
+    width: auto;
+    
+}
 .bnt:hover {
-    background-color: #666;
+    background-color: #442c64;
 }
