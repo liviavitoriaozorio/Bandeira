@@ -5,7 +5,6 @@ let pontuacao = 0;
 // Selecionar elementos do HTML
 const img = document.querySelector('.bandeira'); // Corrigido nome da classe
 const botao = document.querySelector('.bnt');
-const pontuacaoElemento = document.getElementById('pontuacao'); // Corrigido ID
 const inputResposta = document.querySelector('.resposta');
 
 // Função para buscar e sortear um país da API
@@ -27,24 +26,6 @@ function sortPais() {
         .catch(error => console.error("Erro ao carregar API:", error));
 }
 
-// Verificar resposta ao clicar no botão
-botao.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let resposta_pais = inputResposta.value.trim().toLowerCase();
-    let resposta_correta = pais_br.toLowerCase();
-
-    if (resposta_pais === resposta_correta) {
-        pontuacao += 10;
-    } else {
-        pontuacao -= 5;
-    }
-
-    pontuacaoElemento.innerText = `Pontos: ${pontuacao}`;
-
-    inputResposta.value = "";
-    sortPais();
-});
 
 // Aguarda carregamento da página antes de sortear um país
 document.addEventListener("DOMContentLoaded", sortPais);
