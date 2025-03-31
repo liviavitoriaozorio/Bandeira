@@ -8,6 +8,12 @@
 ul {
     list-style: none;
 }    
+body {
+    overflow: hidden; 
+}
+body::-webkit-scrollbar {
+    display: none; 
+}
 /* -- Reset -- */
 
 
@@ -38,13 +44,12 @@ ul {
 main {
     display: flex;
     margin: 2.5rem;
-    border-radius: 1rem 1rem 0rem 0rem;
+    border-radius: 1rem ;
     flex-direction: column; /* https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg */
     background-color: #f9f5e7;
     position: absolute;
     width: 96%;;
-    height: 90.5%;
-    object-fit: cover;
+    height: 100%;
 }
 
 /* -- Topnav -- */ 
@@ -94,7 +99,8 @@ main {
     justify-content: center;
     text-align: center;
     margin-top: 20px;                 
-    padding: 20px;
+    padding: 20px 20px 0 20px;
+
 }
 #mapa{
     margin-top: 4rem;
@@ -136,7 +142,7 @@ main {
 .bnt {
     top: 100px;
     position: absolute;
-    left: 500px;
+    left: 450px;
     grid-column: 2/2;
     display: flex;
     justify-content: center;
