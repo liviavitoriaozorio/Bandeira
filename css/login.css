@@ -140,7 +140,7 @@ main {
     border: none;
 }
 .bnt {
-    top: 100px;
+    margin-top: 40px;
     position: absolute;
     left: 450px;
     grid-column: 2/2;
