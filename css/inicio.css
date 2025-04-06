@@ -119,10 +119,10 @@ main {
     color: white;
     border: none;
     cursor:grab;  
-    display: flex;              /* Usando Flexbox para alinhar os itens no botão */
-    justify-content: center;    /* Centraliza horizontalmente */
-    align-items: center;        /* Alinha verticalmente */
-    gap: 10px;                  /* Espaço entre a imagem e o texto */
+    display: flex;             
+    justify-content: center;    
+    align-items: center;        
+    gap: 10px;                 
     margin-top: 35px;
     z-index: 6;
 }
@@ -134,7 +134,7 @@ main {
     gap: 5px;
 }
 .conteudo button p{
-    text-align: center;         /* Garante que o texto fique centralizado */
+    text-align: center;         
     color: white;
     margin-left:5px;
     margin-bottom: 3px;
