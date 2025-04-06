@@ -1,22 +1,17 @@
-/* -- Reset -- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
+    font-family: "Open Sans", sans-serif;
 } 
 ul {
     list-style: none;
 }    
-/* -- Reset -- */
-
-
-/* -- Fundo -- */
 .background {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* -- vai ser usado para cobrir tudo -- */
+    object-fit: cover; 
     z-index: -1;
 }
 .Nome {
@@ -31,31 +26,27 @@ ul {
     max-height: 5rem;         
     width: auto; 
 }   
-/* -- Fundo -- */ 
-
-
-/* -- main -- */ 
 main {
     display: flex;
     margin: 2.5rem;
     border-radius: 1rem;
-    flex-direction: column; /* https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg */
+    flex-direction: column; 
     background-color: #f9f5e7;
+    height: 800px;
 }
 .menu {
     display: flex;                   
-    justify-content: space-between;  
+    justify-content: space-between; 
     align-items: center;            
     border-radius: 1rem;
-    padding: 10px 20px;  
-    z-index: 1;      
-    height: 100%;    
+    padding: 20px;  
+    z-index: 7;      
+    height: 50px;
+    margin-top: 20px;   
 }
-
 .menu .logo {
     height: 40px;                    
 }
-
 .topicos ul {
     position: relative;
     display: flex;                   
@@ -76,43 +67,34 @@ main {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     padding: 1rem;
+    justify-items: center;
+    align-items: center;
+   
+   
+}
+.topicos{
+    margin-right: 50px;
+    z-index: 10;
+   
+}
+.redes-sociais{
+    z-index: 10;
 }
 .redes-sociais img {
     width: 1.3rem;                     
-    margin: 15px 30px;                
+    margin: 5px 20px;              
 }
-
-
-/* Estilo da seção de conteúdo */
-.conteudo {
-    margin-top: 20px;                 /* Espaçamento abaixo do header */
-    padding: 20px;
-}
-
-/* Estilizando os campos de input e botões */
 .dados {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .dados input {
     padding: 10px;
     font-size: 16px;
 }
 
-.bnt {
-    padding: 10px 20px;
-    background-color: #342164;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 80px;
-    height:80px;
-}
-.bnt img {
-    margin-right: 10px;
-}
+
 .conteudo {
     display: flex;
     flex-direction: column;
@@ -121,25 +103,65 @@ main {
     text-align: center;
     padding: 20px;
     flex: 1;
+    margin-bottom: 190px;               
+    padding: 10px;
+    font-weight: 400;
 }
-
 .conteudo h1 {
     font-size: 3rem;
     margin-bottom: 10px;
 }
-
+.conteudo button{
+    width: 150px;
+    height:40px;
+    background-color: #342164;
+    border-radius: 1rem;
+    color: white;
+    border: none;
+    cursor:grab;  
+    display: flex;              /* Usando Flexbox para alinhar os itens no botão */
+    justify-content: center;    /* Centraliza horizontalmente */
+    align-items: center;        /* Alinha verticalmente */
+    gap: 10px;                  /* Espaço entre a imagem e o texto */
+    margin-top: 35px;
+    z-index: 6;
+}
+.conteudo button img {
+    width: 15px;
+    margin-left: -8px;
+    margin-top: 2px;
+    display: flex;
+    gap: 5px;
+}
+.conteudo button p{
+    text-align: center;         /* Garante que o texto fique centralizado */
+    color: white;
+    margin-left:5px;
+    margin-bottom: 3px;
+    font-weight: 600;
+    font-size:large;
+}
 .conteudo p {
     font-size: 1.25rem;
     margin-bottom: 20px;
+    color:#342164;
+    font-weight: 550;
 }
 .conteudo img{
     width: 100%;
 }
-
 .footer-img {
     display: flex;
     justify-content: center;
-    margin-top: auto; /* Faz o footer ir para o final */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
     z-index: 5;
 }
+.footer-img img {
+    max-width: 100%;  
+    height: auto;  
 
+}
+ 
