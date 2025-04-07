@@ -30,7 +30,8 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;      
     height: 60px;           
-    padding: 0 20px;          
+    padding: 0 20px; 
+    font-size:large;         
 }
 .Nome img {
     margin-top: 2rem;
@@ -109,27 +110,34 @@ main {
     padding: 20px 20px 0 20px;
 }
 #mapa{
-    margin-top: 4rem;
-    margin-left: 0px;
-    width: 65rem;
+    margin-top: 6rem;
+    margin-left: 90px;
+    width: 50rem;
     grid-column: 1/2;
 }
 .conteudo h1{
     position: relative;
     left: 25px;
     top:90px;
-    margin-top: 4rem;
+    margin-top: 5rem;
     font-family: "Open Sans", sans-serif;
     font-size: 3rem;
+    height:100px;
     color: #342164; 
 }
+
 .dados{
     position: relative;
-    top: -19rem;
+    margin-top: -14rem;
+    margin-bottom: 14rem;
     grid-column: 2/2;           
     border-radius: 1rem;
-    padding: 10px 20px; 
 }
+.nome-text{
+  font-size: large;
+  text-align: center;
+}
+
 .user{
     width: 4.5rem;
     position: relative;
@@ -146,32 +154,47 @@ main {
     border: none;
 }
 .bnt {
-    margin-top: 40px;
-    position: absolute;
-    left: 450px;
-    grid-column: 2/2;
-    display: flex;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 3rem;
+    width: 150px;
+    height:40px;
     background-color: #342164;
-    color: #f9f5e7;
-    font-family: "Open Sans", sans-serif;
+    border-radius: 1rem;
+    color: white;
+    border: none;
+    cursor:grab;  
+    display: flex;             
+    justify-content: center;    
+    align-items: center;        
+    gap: 10px;                 
+    margin-top: 35px;
+    z-index: 6;
+    margin-left: 26rem;
 }
 .bnt img{
-    top:8px;
-    left: 2px;
-    position: relative;
-    height: 30px;
-    width: auto;
-
+    width: 15px;
+    margin-left: -8px;
+    margin-top: 2px;
+    display: flex;
+    gap: 5px;
 }
-.bnt img{
-    height: 30px;
-    width: auto;
-    
+.bnt p{
+    text-align: center;         
+    color: white;
+    margin-left:5px;
+    margin-bottom: 3px;
+    font-weight: 600;
+    font-size:large;
 }
 .bnt:hover {
     background-color: #442c64;
+}
+.nome-text{
+    font-size: large;
+}
+@media (max-width: 700px){
+    .conteudo{
+        grid-template-columns: 100%;
+
+    }
+
+
 }
