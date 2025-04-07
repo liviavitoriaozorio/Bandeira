@@ -14,20 +14,25 @@ document.addEventListener("DOMContentLoaded", () => {
     sortPais();
 });
 
-function sortPais() {
-    fetch('https://restcountries.com/v2/all')
-        .then(response => response.json())
-        .then(data => {
-            const paisAleatorio = data[Math.floor(Math.random() * data.length)];
 
-            pais = paisAleatorio.name;
-            bandeira = paisAleatorio.flags.png;
-            pais_br = paisAleatorio.translations.pt;
+fetch('https://restcountries.com/v2/all')
+    .then(response => response.json())
+    .then(data => {
+    api = data
+    sortPais()
+})
+        
 
-            img[0].src = bandeira;
-            nome_pais.innerText = pais_br;
-        })
-        .catch(error => console.error("Erro ao buscar os países:", error));
+
+function sortPais() {    
+    const paisAleatorio = api[Math.floor(Math.random() * api.length)];
+
+    pais = paisAleatorio.name;
+    bandeira = paisAleatorio.flags.png;
+    pais_br = paisAleatorio.translations.pt;
+
+    img[0].src = bandeira;
+    nome_pais.innerText = pais_br;
 }
 
 botao.addEventListener("click", () => {
@@ -64,3 +69,18 @@ function atualizarBarraProgresso() {
         }
     });
 }
+
+
+const btnFechar = document.querySelector('.bnnt');
+const modal = document.getElementById('modal');
+const cancelar = document.getElementById('cancelar');
+const confirmar = document.getElementById('confirmar');
+btnFechar.addEventListener('click', () => {
+    modal.style.display = 'flex';
+});
+cancelar.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+confirmar.addEventListener('click', () => {
+    window.location.href = '../html/inicio.html'; 
+});
