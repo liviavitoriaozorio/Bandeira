@@ -117,7 +117,7 @@ main {
 }
 .conteudo h1{
     position: relative;
-    left: 25px;
+    margin-left:-2rem;
     top:90px;
     margin-top: 5rem;
     font-family: "Open Sans", sans-serif;
@@ -132,6 +132,7 @@ main {
     margin-bottom: 14rem;
     grid-column: 2/2;           
     border-radius: 1rem;
+    margin-left: -6rem;
 }
 .nome-text{
   font-size: large;
@@ -167,7 +168,7 @@ main {
     gap: 10px;                 
     margin-top: 35px;
     z-index: 6;
-    margin-left: 26rem;
+    margin-left: 28rem;
 }
 .bnt img{
     width: 15px;
