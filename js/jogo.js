@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function sortPais() {
-    fetch('https://restcountries.com/v3.1/all')
+    fetch('https://restcountries.com/v2/all')
         .then(response => response.json())
         .then(data => {
             const paisAleatorio = data[Math.floor(Math.random() * data.length)];
 
-            pais = paisAleatorio.name.common;
+            pais = paisAleatorio.name;
             bandeira = paisAleatorio.flags.png;
-            pais_br = paisAleatorio.translations.por.common;
+            pais_br = paisAleatorio.translations.pt;
 
             img[0].src = bandeira;
             nome_pais.innerText = pais_br;
