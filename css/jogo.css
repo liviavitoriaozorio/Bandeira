@@ -28,7 +28,7 @@ body, html {
 }
 
 .FlagRush img {
-    height: 70px;
+    height: 90px;
 }
 
 /* Estrutura */
@@ -36,7 +36,7 @@ main {
     display: grid;
     grid-template-columns: 50% 50%;
     position: absolute;
-    top: 90px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 1800px;
@@ -118,7 +118,7 @@ main {
     margin-top: 100px;
     margin-left: 40px;
 }
-.botao {
+.button {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -157,6 +157,7 @@ main {
 
 /* Conteúdo two */
 .two{
+    position: relative;
     grid-column: 2/2;
     padding: 100px;
     display: flex; 
@@ -168,6 +169,86 @@ main {
 .bandeira {
     display: block;
     width: 90%;
-    max-width: calc(90% - 35px);
+    max-width: 50%;
     height: auto;
+}
+
+.bnnt{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffffff00;
+    border: none;
+    cursor: pointer;
+}
+
+.bnnt img{
+    width: 30px;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.modal-content {
+    display: flex;
+    background: #fdf9f0;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 800px;
+    height: 500px;
+    max-width: 90%;
+}
+
+.modal-left {
+    background-color: #4a3482;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    width: 50%;
+}
+
+.modal-left h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.emoji {
+    width: 300px;
+    margin-top: 100px;
+}
+
+.modal-right {
+    background-color: #fdf9f0;
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-right p{
+    text-align: justify
+}
+
+
+.btn-modal {
+    font-family: 'Open Sans', sans-serif;;
+    background-color: #4a3482;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
 }
