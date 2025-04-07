@@ -1,167 +1,58 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: "Open Sans", sans-serif;
-} 
-ul {
-    list-style: none;
-}    
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    z-index: -1;
-}
-.Nome {
-    display: flex;          
-    justify-content: center;
-    align-items: center;      
-    height: 60px;           
-    padding: 0 20px;          
-}
-.Nome img {
-    margin-top: 2rem;
-    max-height: 5rem;         
-    width: auto; 
-}   
-main {
-    display: flex;
-    margin: 2.5rem;
-    border-radius: 1rem;
-    flex-direction: column; 
-    background-color: #f9f5e7;
-    height: 800px;
-}
-.menu {
-    display: flex;                   
-    justify-content: space-between; 
-    align-items: center;            
-    border-radius: 1rem;
-    padding: 20px;  
-    z-index: 7;      
-    height: 50px;
-    margin-top: 20px;   
-}
-.menu .logo {
-    height: 40px;                    
-}
-.topicos ul {
-    position: relative;
-    display: flex;                   
-    gap: 20px;                       
-    margin-left: 200px;
-    padding: 0;
-    list-style: none;
-}
-.topicos li img{
-    text-align: center;
-    width: 1rem;
-}
-.topicos li a {
-    line-height: 70px;
-    color: #342164;                   
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    padding: 1rem;
-    justify-items: center;
-    align-items: center;
-   
-   
-}
-.topicos{
-    margin-right: 50px;
-    z-index: 10;
-   
-}
-.redes-sociais{
-    z-index: 10;
-}
-.redes-sociais img {
-    width: 1.3rem;                     
-    margin: 5px 20px;              
-}
-.dados {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.dados input {
-    padding: 10px;
-    font-size: 16px;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>Flag Rush - Login</title>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <link rel="stylesheet" type="text/css" href="../css/inicio.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <video autoplay muted loop class="background">
+            <source src="../img/background-video.mp4" type="video/mp4">
+        </video>
 
+        <!-- Logo -->
+    <section>
 
-.conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    flex: 1;
-    margin-bottom: 190px;               
-    padding: 10px;
-    font-weight: 400;
-}
-.conteudo h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-.conteudo button{
-    width: 150px;
-    height:40px;
-    background-color: #342164;
-    border-radius: 1rem;
-    color: white;
-    border: none;
-    cursor:grab;  
-    display: flex;             
-    justify-content: center;    
-    align-items: center;        
-    gap: 10px;                 
-    margin-top: 35px;
-    z-index: 6;
-}
-.conteudo button img {
-    width: 15px;
-    margin-left: -8px;
-    margin-top: 2px;
-    display: flex;
-    gap: 5px;
-}
-.conteudo button p{
-    text-align: center;         
-    color: white;
-    margin-left:5px;
-    margin-bottom: 3px;
-    font-weight: 600;
-    font-size:large;
-}
-.conteudo p {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    color:#342164;
-    font-weight: 550;
-}
-.conteudo img{
-    width: 100%;
-}
-.footer-img {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%; 
-    z-index: 5;
-}
-.footer-img img {
-    max-width: 100%;  
-    height: auto;  
+        <header class="Nome">
+            <img src="../img/logo-escrita-icon.png" alt="Nome Da Marca">
+        </header>
 
-}
- 
+        <!-- MAIN (contém o conteúdo central) -->
+        <main>
+            <div class="menu">
+                <img src="../img/logo-imagem-icon.png" alt="Logo Da Marca" class="logo"></img>
+                <nav class="topicos">
+                    <ul>
+                        <li class="topico"><img src="../img/lampada-icon-computador.png" alt="lambada"><a href="#Sobre">Sobre</a></li>
+                        <li class="topico"><img src="../img/home-icon-computador.png" alt="casa"><a href="#Inicio">Início</a></li>
+                        <li class="topico"><img src="../img/bug-icon-computador.png" alt="inseto"><a href="#ReportBug">Report Bug</a></li>
+                    </ul>
+                </nav>
+                <nav class="redes-sociais">
+                    <a href="#"><img src="../img/instagram-icon-computador.png" alt="Instagram"></a>
+                    <a href="#"><img src="../img/tiktok-icon-computador.png" alt="TikTok"></a>
+                    <a href="#"><img src="../img/twitter-icon-computador.png" alt="X-Twitter"></a>
+                </nav>
+            </div>
+        
+            <div class="conteudo">
+                <h1>Descubra as cores do mundo!</h1>
+                <BR>
+                <p>Viaje sem sair do lugar, da bandeira vibrante da Itália <br> às majestosas do Brasil. </p>
+                <button type="button" class="bnt" id="jogarBnt"><img src="../img/play-icon.png"></img><p>Jogar</p></button>
+            </div>
+        </main>
+        <div class="footer-img">
+            <img src="../img/footer-inicial-computador.png" alt="usuário">
+        </div>
+    </section>
+        
+    <script src="../js/inicio.js"></script>
+    </body>
+</html>  
