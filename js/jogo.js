@@ -3,10 +3,10 @@ let bandeira;
 let pais_br;
 
 let img = document.getElementsByClassName('bandeira');
-let frm = document.querySelector('.resposta'); // Correção da seleção do input
+let frm = document.querySelector('.resposta'); 
 let pontuacaoElemento = document.getElementById('pontuacao');
-let nome_pais = document.getElementById('nome_pais'); // Seleção correta do elemento nome_pais
-let botao = document.querySelector('.bnt'); // Seleção do botão "PRÓXIMO"
+let nome_pais = document.getElementById('nome_pais'); 
+let botao = document.querySelector('.bnt'); 
 
 let pontuacao = 0;
 
@@ -24,22 +24,43 @@ function sortPais() {
             bandeira = paisAleatorio.flags.png;
             pais_br = paisAleatorio.translations.por.common;
 
-            img[0].src = bandeira; // Corrigido para acessar o primeiro elemento da coleção
-            nome_pais.innerText = pais_br; // Atualiza o nome do país em português
+            img[0].src = bandeira;
+            nome_pais.innerText = pais_br;
         })
         .catch(error => console.error("Erro ao buscar os países:", error));
 }
 
 botao.addEventListener("click", () => {
-    let resposta_pais = frm.value.trim(); // Obtém o valor do input corretamente
+    let resposta_pais = frm.value.trim();
+    const etapas = document.querySelectorAll(".etapa");
 
-    if (resposta_pais.toLowerCase() === pais_br.toLowerCase()) {
-        pontuacao += 10;
-    } else {
-        pontuacao -= 5;
+    if (rodadaAtual < 10) {
+        if (resposta_pais.toLowerCase() === pais_br.toLowerCase()) {
+            pontuacao += 10;
+            etapas[rodadaAtual].classList.add("acertou");
+        } else {
+            pontuacao -= 5;
+            etapas[rodadaAtual].classList.add("errou");
+        }
+
+        pontuacaoElemento.innerText = `Pontos: ${pontuacao}`;
+        frm.value = "";
+        rodadaAtual++;
+        sortPais();
     }
-
-    pontuacaoElemento.innerText = `Pontos: ${pontuacao}`;
-    frm.value = ""; // Limpa o input após a resposta
-    sortPais(); // Gera um novo país
 });
+
+
+let rodadaAtual = 0;
+
+function atualizarBarraProgresso() {
+    const etapas = document.querySelectorAll(".etapa");
+
+    etapas.forEach((etapa, index) => {
+        if (index < rodadaAtual) {
+            etapa.classList.add("ativa");
+        } else {
+            etapa.classList.remove("ativa");
+        }
+    });
+}
