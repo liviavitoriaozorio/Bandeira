@@ -82,5 +82,5 @@ cancelar.addEventListener('click', () => {
     modal.style.display = 'none';
 });
 confirmar.addEventListener('click', () => {
-    window.location.href = '../html/inicio.html'; 
+    window.location.href = '../index.html'; 
 });
