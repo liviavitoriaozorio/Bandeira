@@ -2,31 +2,35 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 
+// Cria a aplicação Express
 const app = express();
+
+// Cria o servidor HTTP
 const server = http.createServer(app);
+
+// Cria a instância do Socket.IO
 const io = socketIO(server);
 
-// Servir os arquivos da pasta "public"
-app.use(express.static('public'));
+// Serve os arquivos estáticos da pasta atual (raiz do projeto)
+app.use(express.static(__dirname)); // Serve os arquivos HTML, CSS, JS
 
 // Quando um jogador se conecta
 io.on('connection', (socket) => {
-    console.log('Jogador conectado:', socket.id);
+    console.log('Novo jogador conectado:', socket.id);
 
-    // Quando o jogador entra em uma sala
+    // Quando o jogador entra numa sala
     socket.on('joinGame', (data) => {
-        const { roomId, nome } = data;  // Pega o roomId (nome do jogador) e o nome do jogador
-
-        socket.join(roomId);  // O jogador entra na sala
-        console.log(`Jogador ${nome} entrou na sala ${roomId}`);
+        const { roomId, nome } = data;
+        socket.join(roomId);
+        console.log(`${nome} entrou na sala ${roomId}`);
         
-        // Aqui você pode enviar alguma resposta para o jogador, como:
+        // Envia uma mensagem de boas-vindas para o jogador
         socket.emit('welcome', `Bem-vindo, ${nome}! Você está na sala ${roomId}.`);
     });
 
-    // Quando o jogador sai
+    // Quando o jogador desconectar
     socket.on('disconnect', () => {
-        console.log('Jogador saiu:', socket.id);
+        console.log('Jogador desconectado:', socket.id);
     });
 });
 
