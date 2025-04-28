@@ -1,24 +1,27 @@
-// 1. Importa os pacotes
 const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 
-// 2. Cria o app e o servidor
 const app = express();
 const server = http.createServer(app);
-const io = socketIO(server); // Socket.IO ligado ao servidor
+const io = socketIO(server);
 
-// 3. Diz que a pasta "public" tem os arquivos do seu site
+// Servir os arquivos da pasta "public"
 app.use(express.static('public'));
 
-// 4. Quando um jogador se conecta
+// Quando um jogador se conecta
 io.on('connection', (socket) => {
     console.log('Jogador conectado:', socket.id);
 
-    // Quando ele entra numa sala (enviado pelo navegador)
-    socket.on('joinGame', (roomId) => {
-        socket.join(roomId); // entra na sala
-        console.log(`Jogador ${socket.id} entrou na sala ${roomId}`);
+    // Quando o jogador entra em uma sala
+    socket.on('joinGame', (data) => {
+        const { roomId, nome } = data;  // Pega o roomId (nome do jogador) e o nome do jogador
+
+        socket.join(roomId);  // O jogador entra na sala
+        console.log(`Jogador ${nome} entrou na sala ${roomId}`);
+        
+        // Aqui você pode enviar alguma resposta para o jogador, como:
+        socket.emit('welcome', `Bem-vindo, ${nome}! Você está na sala ${roomId}.`);
     });
 
     // Quando o jogador sai
@@ -27,7 +30,7 @@ io.on('connection', (socket) => {
     });
 });
 
-// 5. Inicia o servidor na porta 3000
+// Inicia o servidor na porta 3000
 server.listen(3000, () => {
     console.log('Servidor rodando em http://localhost:3000');
 });
