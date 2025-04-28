@@ -1,6 +1,12 @@
+//adicionei o time já
+
 let pais;
 let bandeira;
 let pais_br;
+
+let timerElemento = document.getElementById("timer");
+let tempo = 0;
+let intervaloTimer;
 
 let img = document.getElementsByClassName('bandeira');
 let frm = document.querySelector('.resposta'); 
@@ -11,19 +17,29 @@ let botao = document.querySelector('.bnt');
 let pontuacao = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
-    sortPais();
+    iniciarTimer();
 });
+
+function iniciarTimer() {
+    intervaloTimer = setInterval(() => {
+        tempo++;
+        timerElemento.innerText = `Timer: ${tempo}`;
+    }, 1000); // Atualiza a cada 1 segundo
+}
+
+function pararTimer() {
+    clearInterval(intervaloTimer);
+}
 
 
 fetch('https://restcountries.com/v2/all')
     .then(response => response.json())
     .then(data => {
-    api = data
-    sortPais()
-})
-        
+    api = data;
+    sortPais(); 
+});
 
-
+    
 function sortPais() {    
     const paisAleatorio = api[Math.floor(Math.random() * api.length)];
 
@@ -51,10 +67,15 @@ botao.addEventListener("click", () => {
         pontuacaoElemento.innerText = `Pontos: ${pontuacao}`;
         frm.value = "";
         rodadaAtual++;
-        sortPais();
+
+        if (rodadaAtual < 10) {
+            sortPais();
+        } else {
+            pararTimer(); 
+            alert(`Fim de jogo! Seu tempo foi de ${tempo} segundos e sua pontuação foi ${pontuacao}`);
+        }
     }
 });
-
 
 let rodadaAtual = 0;
 
