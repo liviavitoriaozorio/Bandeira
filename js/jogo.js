@@ -1,5 +1,4 @@
-//adicionei o time já
-
+// Supondo que o seu código já tenha as variáveis que você mostrou
 let pais;
 let bandeira;
 let pais_br;
@@ -31,7 +30,6 @@ function pararTimer() {
     clearInterval(intervaloTimer);
 }
 
-
 fetch('https://restcountries.com/v2/all')
     .then(response => response.json())
     .then(data => {
@@ -39,7 +37,6 @@ fetch('https://restcountries.com/v2/all')
     sortPais(); 
 });
 
-    
 function sortPais() {    
     const paisAleatorio = api[Math.floor(Math.random() * api.length)];
 
@@ -73,6 +70,7 @@ botao.addEventListener("click", () => {
         } else {
             pararTimer(); 
             alert(`Fim de jogo! Seu tempo foi de ${tempo} segundos e sua pontuação foi ${pontuacao}`);
+            window.location.href = "ranking.html";
         }
     }
 });
@@ -91,6 +89,13 @@ function atualizarBarraProgresso() {
     });
 }
 
+// Captura o evento de pressionar tecla (para enviar a resposta com "Enter")
+frm.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault(); 
+        botao.click(); 
+    }
+});
 
 const btnFechar = document.querySelector('.bnnt');
 const modal = document.getElementById('modal');
